@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
 import './App.css';
+import LandingPage from './components/LandingPage'
+import FaqPage from './components/FaqPage'
+import OngoingPage from './components/OngoingPage'
+import CopyrightText from './components/CopyrightText'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route exact={true} path="/" component={LandingPage} />
+      <Route path="/faq" component={FaqPage} />
+      <Route path="/started" component={OngoingPage} />
+      <CopyrightText />
     </div>
   );
 }

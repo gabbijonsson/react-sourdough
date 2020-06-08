@@ -1,0 +1,18 @@
+.faqpage__container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+.faqpage__sorry {
+    margin: 0 3em;
+    text-align: center;
+    align-self: end;
+}
+
+.faqpage__logo {
+    max-width: 250px;
+    align-self: start;
+    margin-top: 3em;
+}

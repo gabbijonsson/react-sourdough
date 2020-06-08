@@ -1,0 +1,40 @@
+.landingpage__container {
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+.landingpage__logo {
+    width: 80%;
+    align-self: end;
+    max-width: 400px;
+}
+
+.landingpage__createbtn {
+    margin: 0.5em;
+    align-self: end;
+}
+
+.landingpage__p-wrapper {
+    width: 80vw;
+    max-width: 300px;
+    align-self: start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    color: #9F9F9F;
+}
+/*
+.landingpage__started {
+    grid-area: started;
+}
+
+.landingpage__pipe {
+    grid-area: pipe;
+}
+
+.landingpage__faq {
+    grid-area: faq;
+} */
