@@ -1,0 +1,53 @@
+.newbread__breadid {
+    position: fixed;
+    right: 36px;
+    top: 36px;
+    text-transform: uppercase;
+}
+
+.newbread__container {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 30px auto;
+    align-items: center;
+}
+
+.newbread__recipetitle {
+    text-transform: uppercase;
+    justify-self: center;
+    grid-column: span 4;
+}
+
+#newbread__add, #newbread__edit {
+    font-size: 1em;
+    grid-column: span 2;
+}
+
+#newbread__add {
+    justify-self: end;
+    margin-right: 0.3em;
+}
+
+#newbread__edit {
+    justify-self: start;
+    margin-left: 0.3em;
+}
+
+.newbread__hydration {
+    grid-column: span 4;
+    justify-self: center;
+}
+
+.newbread__flours {
+    grid-column: span 2;
+    margin-left: 1em;
+    align-self: start;
+}
+
+.newbread__grams, .newbread__percent {
+    justify-self: center;
+    align-self: start;
+}

@@ -1,0 +1,22 @@
+.ongoingpage__container {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.ongoingpage__createbtn {
+    margin: 0.5em;
+}
+
+.ongoingpage__container > p {
+    max-width: 70%;
+    margin: 0 auto 1em auto;
+    text-align: center;
+    font-size: larger;
+}
+
+.ongoingpage__link {
+    display: grid;
+}

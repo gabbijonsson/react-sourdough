@@ -7,7 +7,7 @@ function LandingPage() {
     return (
         <div className="landingpage__container">
             <img className="landingpage__logo" src={Masonjar} alt="Masonjar with text"/>
-            <button className="landingpage__createbtn squarebutton">Create Bread</button>
+            <Link to="/new"><button className="landingpage__createbtn squarebutton">Create Bread</button></Link>
             <div className="landingpage__p-wrapper">
                 <p className="landingpage__started"><Link to="/started">Already started?</Link></p>
                 <p className="landingpage__pipe">|</p>
