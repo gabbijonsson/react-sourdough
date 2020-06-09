@@ -1,0 +1,27 @@
+.submitbread__container {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 80px auto 50px 50px;
+    place-items: center;
+}
+
+.submitbread__title {
+    text-transform: uppercase;
+}
+
+.submitbread__ratingcontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+}
+
+.submitbread__ratingcontainer > * {
+    font-size: 3em;
+}
+
+.submitbread__ratetext {
+    align-self: start;
+}

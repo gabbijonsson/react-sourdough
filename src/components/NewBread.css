@@ -11,7 +11,7 @@
     padding-bottom: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px 50px 30px auto;
+    grid-template-rows: 50px 50px 30px auto 50px 50px;
     align-items: center;
 }
 
@@ -41,13 +41,39 @@
     justify-self: center;
 }
 
-.newbread__flours {
-    grid-column: span 2;
-    margin-left: 1em;
+.newbread__ingredientlist {
     align-self: start;
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: start;
+}
+
+.newbread__flours {
+    margin-left: 1.5em;
 }
 
 .newbread__grams, .newbread__percent {
     justify-self: center;
-    align-self: start;
+}
+
+.createbread__link {
+    grid-column: span 4;
+    display: grid;
+    place-items: center;
+}
+
+.createbread__continue, .createbread__store {
+    place-self: center;
+    font-size: 1.5em;
+    width: 200px;
+}
+
+.createbread__store {
+    background-color: #DDD;
+    box-shadow: 3px 5px 15px 0px #303030;
+    text-transform: uppercase;
+    padding: 0.2em 1em;
+    outline: none;
+    border: 3px solid #9C909C;
 }
