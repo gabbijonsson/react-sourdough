@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Menu from './MenuBar';
 import ApiHandler from '../util/ApiHandler';
+import './RecipeBank.css';
 import {Link} from 'react-router-dom';
 
 function RecipeBank() {

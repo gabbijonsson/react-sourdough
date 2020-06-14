@@ -1,0 +1,25 @@
+.recipebank__container {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* align-items: center;
+    align-content: center; */
+
+}
+
+.recipebank__container > ul {
+    list-style: none;
+}
+
+.recipebank__container > ul > li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.recipebank__container > ul > li:hover {
+    color: #A09381;
+}

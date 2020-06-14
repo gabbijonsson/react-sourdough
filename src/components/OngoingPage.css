@@ -1,8 +1,10 @@
 .ongoingpage__container {
     height: 100vh;
     display: flex;
+    padding-top: 100px;
+    padding-bottom: 50px;
     flex-flow: column nowrap;
-    justify-content: center;
+    /* justify-content: center; */
     align-content: center;
 }
 
@@ -19,4 +21,21 @@
 
 .ongoingpage__link {
     display: grid;
+}
+
+.ongoingpage__container > ul {
+    margin: 0 auto;
+    list-style: none;
+    font-size: 1.5em;
+}
+
+.ongoingpage__container > h1 {
+    font-size: 2em;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.landingpage__p-wrapper > p {
+    padding: 0.2em;
 }

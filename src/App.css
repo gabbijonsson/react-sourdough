@@ -44,3 +44,7 @@ a:hover {
   transform: translate(-50%, -50%);
   color: #9F9F9F;
 }
+
+button:hover {
+  cursor: pointer;
+}

@@ -8,7 +8,8 @@ function MenuBar() {
         <Menu width='350px'>
             <Link to="/" id="home" className="menu-item">Home</Link>
             <Link to="/started" id="started" className="menu-item">Ongoing</Link>
-            <Link to="/recipebank" id="faq" className="menu-item">Recipebank</Link>
+            <Link to="/recipebank" id="recipebank" className="menu-item">Recipebank</Link>
+            <Link to="/ingredients" id="ingredients" className="menu-item">Ingredients</Link>
         </Menu>
     )
 }

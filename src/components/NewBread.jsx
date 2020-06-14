@@ -10,9 +10,6 @@ function NewBread() {
       <h2 className="newbread__breadid">BREAD ID: 001</h2>
       <div className="newbread__container">
         <h1 className="newbread__recipetitle">RECIPE</h1>
-        <button id="newbread__add" className="squarebutton">
-          ADD
-        </button>
         <button id="newbread__edit" className="squarebutton">
           EDIT
         </button>
@@ -24,12 +21,8 @@ function NewBread() {
           <div className="newbread__grams">
             <h2 className="newbread__ingredient-title">Grams</h2>
           </div>
-          <div className="newbread__percent">
-            <h2 className="newbread__ingredient-title">%</h2>
-          </div>
         </div>
-        <Link className="createbread__link" to="/notes"><button className="createbread__continue squarebutton">Continue</button></Link>
-        <Link className="createbread__link" to="/started"><button className="createbread__store">Store</button></Link>
+        <Link className="createbread__link" to="/submit"><button className="createbread__continue squarebutton">Finalize</button></Link>
       </div>
     </>
   );
