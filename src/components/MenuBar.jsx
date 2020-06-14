@@ -9,7 +9,7 @@ function MenuBar() {
             <Link to="/" id="home" className="menu-item">Home</Link>
             <Link to="/started" id="started" className="menu-item">Ongoing</Link>
             <Link to="/recipebank" id="recipebank" className="menu-item">Recipebank</Link>
-            <Link to="/ingredients" id="ingredients" className="menu-item">Ingredients</Link>
+            <Link to="/flours" id="flours" className="menu-item">Flours</Link>
         </Menu>
     )
 }

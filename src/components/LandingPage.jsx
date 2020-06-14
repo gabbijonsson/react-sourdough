@@ -19,14 +19,14 @@ function LandingPage() {
       </Link>
       <div className="landingpage__p-wrapper">
         <p className="landingpage__started">
-          <Link to="/started">Ongoing dough</Link>
+          <Link to="/started">Ongoing recipes</Link>
         </p>
         <p className="landingpage__pipe">|</p>
         <p className="landingpage__recipebank">
           <Link to="/recipebank">Recipebank</Link>
         </p>
-        <p className="landingpage__ingredients">
-          <Link to="/ingredients">Ingredients</Link>
+        <p className="landingpage__flours">
+          <Link to="/flours">Flours</Link>
         </p>
       </div>
     </div>

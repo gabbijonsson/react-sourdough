@@ -10,13 +10,23 @@ function NewBread() {
       <h2 className="newbread__breadid">BREAD ID: 001</h2>
       <div className="newbread__container">
         <h1 className="newbread__recipetitle">RECIPE</h1>
-        <button id="newbread__edit" className="squarebutton">
-          EDIT
-        </button>
+        <form>
+        <select id="ingredient" name="ingredient">
+          <option disabled>--- FLOURS ---</option>
+          <option disabled>--- LIQUIDS ---</option>
+          <option>Water</option>
+          <option>Milk</option>
+          <option disabled>--- OTHERS ---</option>
+          <option>Olive Oil</option>
+          <option>Salt</option>
+          <option>Seeds</option>
+        </select>
+        <input id="ingredient-submitbtn" className="squarebutton" type="submit" value="ADD" />
+        </form>
         <p className="newbread__hydration">Hydration: 50%</p>
         <div className="newbread__ingredientlist">
           <div className="newbread__flours">
-            <h2 className="newbread__ingredient-title">Flours</h2>
+            <h2 className="newbread__ingredient-title">Ingredients</h2>
           </div>
           <div className="newbread__grams">
             <h2 className="newbread__ingredient-title">Grams</h2>

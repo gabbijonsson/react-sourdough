@@ -52,7 +52,7 @@ function OngoingPage() {
     <>
       <Menu />
       <div className="ongoingpage__container">
-        <h1>Select bread</h1>
+        <h1>Ongoing recipes</h1>
         {determinContent()}
       </div>
     </>

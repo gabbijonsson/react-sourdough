@@ -7,7 +7,7 @@ import NewBread from './components/NewBread'
 import SubmitRecipe from './components/SubmitRecipe'
 import CopyrightText from './components/CopyrightText'
 import RecipeBank from './components/RecipeBank'
-import IngredientList from './components/IngredientList'
+import FlourList from './components/FlourList'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Route path="/started" component={OngoingPage} />
       <Route path="/submit" component={SubmitRecipe} />
       <Route path="/recipebank" component={RecipeBank} />
-      <Route path="/ingredients" component={IngredientList} />
+      <Route path="/flours" component={FlourList} />
       <CopyrightText />
     </div>
   );

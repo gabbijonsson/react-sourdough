@@ -1,0 +1,29 @@
+.flourlist__wrapper {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 60px auto 70px;
+    justify-items: center;
+}
+
+.flourlist__wrapper > h1 {
+    text-transform: uppercase;
+}
+
+.addflour-btn {
+  background-color: #9C909C;
+  box-shadow: 3px 5px 15px 0px #303030;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 0.2em 1em;
+  outline: none;
+  border: none;
+}
+
+#flourname {
+    height: 2.5em;
+    margin: 0 0.5em;
+    padding: 0.2em;
+}

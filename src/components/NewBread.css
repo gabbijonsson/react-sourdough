@@ -49,7 +49,7 @@
 }
 
 .createbread__link {
-    grid-column: span 4;
+    grid-column: span 3;
     display: grid;
     place-items: center;
 }
@@ -67,4 +67,18 @@
     padding: 0.2em 1em;
     outline: none;
     border: 3px solid #9C909C;
+}
+
+form {
+    grid-column: span 3;
+    justify-self: center;
+}
+
+#ingredient-submitbtn {
+    font-size: 1em;
+}
+
+select {
+    padding: 0.2em;
+    margin: 0.5em;
 }

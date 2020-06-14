@@ -35,6 +35,7 @@ function RecipeBank() {
         <>
         <Menu />
         <div className="recipebank__container">
+            <h1>Recipebank</h1>
             {createBreadList()}
         </div>
         </>
