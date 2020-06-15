@@ -1,3 +1,8 @@
+const getNextId = () => {
+    let allIds = getRecipes().map((recipe) => Number(recipe.recipeid));
+    return allIds.length > 0 ? Math.max(...allIds)+1 : 1;
+}
+
 const deleteFlour = (flourToDelete) => {
     let savedFlours = getFlours();
     let others = savedFlours.filter(flour => flour.name !== flourToDelete.name);
@@ -20,21 +25,22 @@ const setFlours = (flours) => {
 }
 
 const getRecipes = () => {
-    let savedBreads = localStorage.getItem("recipes");
-    return savedBreads ? JSON.parse(savedBreads) : [];
+    let savedRecipes = localStorage.getItem("recipes");
+    return savedRecipes ? JSON.parse(savedRecipes) : [];
 }
 
 const getUnfinishedRecipes = () => {
-    let unfinishedBreads = getRecipes().filter((bread) => !bread.finalized);
-    return unfinishedBreads;
+    let unfinishedRecipes = getRecipes().filter((recipe) => !recipe.finalized);
+    return unfinishedRecipes;
 }
 
 const getFinishedRecipes = () => {
-    let finishedBreads = getRecipes().filter((bread) => bread.finalized);
-    return finishedBreads;
+    let finishedRecipes = getRecipes().filter((recipe) => recipe.finalized);
+    return finishedRecipes;
 }
 
 export default {
+    getNextId,
     deleteFlour,
     addFlour,
     getFlours,

@@ -17,8 +17,8 @@ function OngoingPage() {
 
     recipeList.forEach((bread) => {
       breadsToDisplay.push(
-        <li key={bread.breadid}>
-          <Link to={`/submit?breadid=${bread.breadid}`}><h2>{bread.breadid}</h2></Link>
+        <li key={bread.recipeid}>
+          <Link to={`/submit?breadid=${bread.recipeid}`}><h2>{bread.recipeid}</h2></Link>
         </li>
       );
     })
