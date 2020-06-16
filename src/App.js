@@ -12,7 +12,7 @@ import FlourList from './components/FlourList'
 function App() {
   return (
     <div className="App">
-      <Route exact={true} path="/home" component={LandingPage} />
+      <Route exact={true} path="/" component={LandingPage} />
       <Route path="/new" component={NewBread} />
       <Route path="/started" component={OngoingPage} />
       <Route path="/submit" component={SubmitRecipe} />
