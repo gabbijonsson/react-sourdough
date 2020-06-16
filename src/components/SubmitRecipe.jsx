@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import Menu from "./MenuBar";
 import "./SubmitRecipe.css";
-import QueryUtil from "../util/QueryUtil";
 import { useForm } from "react-hook-form";
 import ApiHandler from "../util/ApiHandler";
 
-function SubmitRecipe(props) {
-  let recipeId = QueryUtil.getQueryParameter("recipeid", props.location.search);
+function SubmitRecipe() {
+  let query = useQuery();
+
+  let recipeId = query.get("recipeid")
   if (!recipeId) {
     recipeId = "---";
   }
@@ -15,11 +16,14 @@ function SubmitRecipe(props) {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
   const [notes, setNotes] = useState("");
+  
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
 
   useEffect(() => {
     if (!isNaN(recipeId)) {
       let recipe = ApiHandler.getRecipe(Number(recipeId));
-      console.log("recipe", recipe);
       if (recipe) {
         setNotes(recipe.notes);
       }
@@ -53,8 +57,8 @@ function SubmitRecipe(props) {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="submitbread__title">SUBMIT RECIPE</h1>
-        <select id="rating" name="rating" ref={register()}>
-          <option value="" selected="selected" disabled>
+        <select id="rating" name="rating" defaultValue="" ref={register()}>
+          <option value="" disabled>
             -- Rating --
           </option>
           <option value="1">1 - It went in the trash...</option>
