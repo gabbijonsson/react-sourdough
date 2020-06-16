@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6275923ef8fe8cdbc3d466b335d5baed",
+    "revision": "15770ee154ca472d55c7bf5bae8476bd",
     "url": "/react-sourdough/index.html"
   },
   {
-    "revision": "6d1fc00249e01a00ebfc",
+    "revision": "4d9a42248ff6acd3f1c7",
     "url": "/react-sourdough/static/css/main.7e2c1f24.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-sourdough/static/js/2.b80a8e29.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6d1fc00249e01a00ebfc",
-    "url": "/react-sourdough/static/js/main.36235d2e.chunk.js"
+    "revision": "4d9a42248ff6acd3f1c7",
+    "url": "/react-sourdough/static/js/main.d96c22bb.chunk.js"
   },
   {
     "revision": "d7ccc86f802813ffc5d9",
