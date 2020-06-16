@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/react-sourdough/static/css/main.7e2c1f24.chunk.css",
-    "main.js": "/react-sourdough/static/js/main.51dcea44.chunk.js",
-    "main.js.map": "/react-sourdough/static/js/main.51dcea44.chunk.js.map",
+    "main.js": "/react-sourdough/static/js/main.e7fdc649.chunk.js",
+    "main.js.map": "/react-sourdough/static/js/main.e7fdc649.chunk.js.map",
     "runtime-main.js": "/react-sourdough/static/js/runtime-main.74f1f10f.js",
     "runtime-main.js.map": "/react-sourdough/static/js/runtime-main.74f1f10f.js.map",
-    "static/js/2.51fb986a.chunk.js": "/react-sourdough/static/js/2.51fb986a.chunk.js",
-    "static/js/2.51fb986a.chunk.js.map": "/react-sourdough/static/js/2.51fb986a.chunk.js.map",
+    "static/js/2.b80a8e29.chunk.js": "/react-sourdough/static/js/2.b80a8e29.chunk.js",
+    "static/js/2.b80a8e29.chunk.js.map": "/react-sourdough/static/js/2.b80a8e29.chunk.js.map",
     "index.html": "/react-sourdough/index.html",
-    "precache-manifest.e59373beddbd98834f4a51d9cd1a2817.js": "/react-sourdough/precache-manifest.e59373beddbd98834f4a51d9cd1a2817.js",
+    "precache-manifest.22ce609a861c7070f986d20de79b269c.js": "/react-sourdough/precache-manifest.22ce609a861c7070f986d20de79b269c.js",
     "service-worker.js": "/react-sourdough/service-worker.js",
     "static/css/main.7e2c1f24.chunk.css.map": "/react-sourdough/static/css/main.7e2c1f24.chunk.css.map",
-    "static/js/2.51fb986a.chunk.js.LICENSE.txt": "/react-sourdough/static/js/2.51fb986a.chunk.js.LICENSE.txt",
+    "static/js/2.b80a8e29.chunk.js.LICENSE.txt": "/react-sourdough/static/js/2.b80a8e29.chunk.js.LICENSE.txt",
     "static/media/Masonjar.png": "/react-sourdough/static/media/Masonjar.3368e71c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.74f1f10f.js",
-    "static/js/2.51fb986a.chunk.js",
+    "static/js/2.b80a8e29.chunk.js",
     "static/css/main.7e2c1f24.chunk.css",
-    "static/js/main.51dcea44.chunk.js"
+    "static/js/main.e7fdc649.chunk.js"
   ]
 }
