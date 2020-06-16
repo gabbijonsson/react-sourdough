@@ -1,17 +1,17 @@
 import React from "react";
 import Menu from "./MenuBar";
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import "./NewBread.css";
 import ApiHandler from "../util/ApiHandler";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
-
 function NewBread() {
 
-  const { register, handleSubmit } = useForm();
+  const history = useHistory();
+  const { register, errors, handleSubmit } = useForm();
   const [id, setId] = useState(1);
-  const [hydration, setHydration] = useState(0);
+  const [hydrationChanged, updateHydration] = useState(false);
   const [ingredients, setIngredients] = useState([])
 
   useEffect(() => { 
@@ -28,35 +28,59 @@ function NewBread() {
 
     let newIngredient = {name: ingredientParts[1], type: ingredientParts[0]};
 
-    console.log(newIngredient)
-
     setIngredients([...ingredients].concat([newIngredient]));
+
   };
 
-  //TODO: Uppdatera hydration, total flour-mängd för bakers %
   function handleIngredientChange(ingredient, event) {
-    console.log(ingredient)
-    event.target.getAttribute('ingredienttype')
-    console.log(event.target.getAttribute('ingredienttype'));
+    ingredient.amount = Number(event.target.value ? event.target.value : 0);
+    updateHydration(!hydrationChanged)
+  }
+
+  function deleteIngredient(ingredientToDelete) {
+    let remainingIngredients = ingredients.filter((ingredient) => ingredient !== ingredientToDelete);
+    setIngredients(remainingIngredients)
   }
 
   function displayIngredient(ingredient) {
     return (
-      <li key={ingredients.indexOf(ingredient)}>
+      <li className="newbread__one-ingredient-row" key={ingredient.name}>
+        <button className="newbread__one-ingredient-row__deletebtn" onClick={() => deleteIngredient(ingredient)}>X</button>
         <p>{ingredient.name}</p>
-        <input ingredienttype={ingredient.type} type="number" onChange={(event) => handleIngredientChange(ingredient, event)}></input>
+        <input className="newbread__one-ingredient-row__grams" ingredienttype={ingredient.type} type="number" onChange={(event) => handleIngredientChange(ingredient, event)}></input>
       </li>
     )
+  }
+
+  function getIngredientAmount(type) {
+    let amountReducer = (acc, curr) => { return curr.amount ? acc + curr.amount : acc }
+    let amount = ingredients.filter(ingredient => ingredient.type === type).reduce(amountReducer, 0);
+    return isNaN(amount) ? 0 : amount;
+  }
+
+  function calculateHydration() {
+    let totalStarter = getIngredientAmount('starter')
+    let totalFlour = getIngredientAmount('flour') + (totalStarter/2)
+    let totalLiquid = getIngredientAmount('liquid') + (totalStarter/2)
+
+    let hydration = Math.round((totalLiquid / totalFlour) * 1000) / 10
+    return isNaN(hydration) ? 0 : hydration
+  }
+
+  function saveRecipe() {
+    ApiHandler.saveRecipe(id, ingredients);
+    history.push('/submit?recipeid='+id)
   }
 
   return (
     <>
       <Menu />
-  <h2 className="newbread__breadid">BREAD ID: {id}</h2>
+  <h2 className="newbread__breadid">RECIPE ID: {id}</h2>
       <div className="newbread__container">
         <h1 className="newbread__recipetitle">RECIPE</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <select id="ingredient" name="ingredient" ref={register()}>
+          <p className="newbread__error">{errors.ingredient && "Ingredient already exist!"}</p>
+          <select id="ingredient" name="ingredient" ref={register({ required: true, validate: ingredientToValidate => !ingredients.some(ingredient => ingredientToValidate.includes(ingredient.name)) })}>
             <option disabled>--- FLOURS ---</option>
             {displayFlours()}
             <option disabled>--- LIQUIDS ---</option>
@@ -70,7 +94,7 @@ function NewBread() {
           </select>
           <input id="ingredient-submitbtn" className="squarebutton" type="submit" value="ADD" />
         </form>
-        <p className="newbread__hydration">Hydration: {hydration}%</p>
+        <p className="newbread__hydration">Hydration: {calculateHydration(hydrationChanged)}%</p>
         <div className="newbread__ingredientlist">
           <div className="newbread__flours">
             <h2 className="newbread__ingredient-title">Ingredients</h2>
@@ -84,7 +108,7 @@ function NewBread() {
             </ul>
           </div>
         </div>
-        <Link className="createbread__link" to="/submit"><button className="createbread__continue squarebutton">Finalize</button></Link>
+        <button className="createbread__continue squarebutton" onClick={saveRecipe}>Continue</button>
       </div>
     </>
   );

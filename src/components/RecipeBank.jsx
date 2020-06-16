@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Menu from './MenuBar';
 import ApiHandler from '../util/ApiHandler';
 import './RecipeBank.css';
-import {Link} from 'react-router-dom';
 
 function RecipeBank() {
 
@@ -13,20 +12,26 @@ function RecipeBank() {
         setRecipeList(savedBreads);
       }, []);
 
-    function createBreadList() {
-        let breadsToDisplay = [];
+    function deleteRecipe(recipeId) {
+    ApiHandler.deleteRecipe(Number(recipeId));
+    setRecipeList(recipeList.filter((recipe) => recipe.recipeid !== recipeId))
+    }
 
-        recipeList.forEach((bread) => {
-            breadsToDisplay.push(
-                <li key={bread.recipeid}>
-                    <Link to={`/submit?breadid=${bread.recipeid}`}><h2>{bread.recipeid}</h2></Link>
+    function createBreadList() {
+        let recipesToDisplay = [];
+
+        recipeList.forEach((recipe) => {
+            recipesToDisplay.push(
+                <li key={recipe.recipeid}>
+                    <h2>{recipe.recipeid}</h2>
+                    <button className="newbread__one-ingredient-row__deletebtn" onClick={() => deleteRecipe(recipe.recipeid)}>X</button>
                 </li>
             );
         })
 
         return (
             <ul>
-                {breadsToDisplay}
+                {recipesToDisplay}
             </ul>
         )
     }

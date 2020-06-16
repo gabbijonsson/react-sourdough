@@ -40,12 +40,16 @@
     align-items: start;
 }
 
+.newbread__ingredient-list {
+    grid-column: span 2;
+}
+
 .newbread__flours {
     margin-left: 1.5em;
 }
 
-.newbread__grams, .newbread__percent {
-    justify-self: center;
+.newbread__grams {
+    justify-self: start;
 }
 
 .createbread__link {
@@ -55,9 +59,13 @@
 }
 
 .createbread__continue, .createbread__store {
-    place-self: center;
+    place-self: start center;
     font-size: 1.5em;
     width: 200px;
+}
+
+.createbread__continue {
+    grid-column: span 3;
 }
 
 .createbread__store {
@@ -81,4 +89,26 @@ form {
 select {
     padding: 0.2em;
     margin: 0.5em;
+}
+
+.newbread__error {
+    color: red;
+    text-align: center;
+}
+
+.newbread__one-ingredient-row {
+    display: grid;
+    grid-template-columns: 0.2fr 2fr 1fr;
+    margin: 0.1em 1.5em;
+}
+
+.newbread__one-ingredient-row__grams {
+    align-self: start;
+    width: 80px;
+}
+
+.newbread__one-ingredient-row__deletebtn {
+    margin-right: 0.5em;
+    background-color: red;
+    font-weight: 800;
 }

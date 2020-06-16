@@ -1,3 +1,29 @@
+const updateRecipe = (id, rating, notes, finalized) => {
+    let recipes = getRecipes();
+    let recipeToUpdate = recipes.find((recipe) => recipe.recipeid === id);
+    recipeToUpdate.rating = rating;
+    recipeToUpdate.notes = notes;
+    recipeToUpdate.finalized = finalized;
+    setRecipes(recipes);
+}
+
+const deleteRecipe = (id) => {
+    let savedRecipes = getRecipes();
+    let others = savedRecipes.filter(recipe => recipe.recipeid !== id);
+    setRecipes(others);
+}
+
+const saveRecipe = (id, ingredients) => {
+    let newRecipe = {
+        recipeid: id,
+        ingredients: ingredients
+    }
+
+    let allRecipes = getRecipes();
+    allRecipes.push(newRecipe);
+    localStorage.setItem("recipes", JSON.stringify(allRecipes));
+}
+
 const getNextId = () => {
     let allIds = getRecipes().map((recipe) => Number(recipe.recipeid));
     return allIds.length > 0 ? Math.max(...allIds)+1 : 1;
@@ -24,9 +50,19 @@ const setFlours = (flours) => {
     localStorage.setItem("flours", JSON.stringify(flours));
 }
 
+const getRecipe = (id) => {
+    let recipes = getRecipes();
+    let recipe = recipes.find((recipe) => recipe.recipeid === id)
+    return recipe;
+}
+
 const getRecipes = () => {
     let savedRecipes = localStorage.getItem("recipes");
     return savedRecipes ? JSON.parse(savedRecipes) : [];
+}
+
+const setRecipes = (recipes) => {
+    localStorage.setItem("recipes", JSON.stringify(recipes));
 }
 
 const getUnfinishedRecipes = () => {
@@ -40,10 +76,14 @@ const getFinishedRecipes = () => {
 }
 
 export default {
+    updateRecipe,
+    deleteRecipe,
+    saveRecipe,
     getNextId,
     deleteFlour,
     addFlour,
     getFlours,
+    getRecipe,
     getRecipes,
     getUnfinishedRecipes,
     getFinishedRecipes

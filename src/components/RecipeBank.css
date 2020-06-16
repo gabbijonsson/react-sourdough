@@ -15,14 +15,28 @@
 
 .recipebank__container > ul {
     list-style: none;
+    display: grid;
 }
 
 .recipebank__container > ul > li {
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: 1.5em;
+    display: grid;
+    grid-template-columns: 40vw 40vw;
 }
 
 .recipebank__container > ul > li:hover {
     color: #A09381;
+}
+
+.recipebank__container > ul > li > h2 {
+    justify-self: end;
+}
+
+.recipebank__container > ul > li > button {
+    justify-self: start;
+    width: 30px;
+    font-size: 1em;
+    margin-left: 1em;
 }

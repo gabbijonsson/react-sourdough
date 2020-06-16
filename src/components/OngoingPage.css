@@ -4,7 +4,6 @@
     padding-top: 100px;
     padding-bottom: 50px;
     flex-flow: column nowrap;
-    /* justify-content: center; */
     align-content: center;
 }
 
@@ -38,4 +37,27 @@
 
 .landingpage__p-wrapper > p {
     padding: 0.2em;
+}
+
+.ongoingpage__recipe-row {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+}
+
+.ongoingpage__recipe-row:hover {
+    color: #A09381;
+}
+
+.ongoingpage__recipe-row > a {
+    justify-self: end;
+}
+
+.ongoingpage__recipe-row > button {
+    justify-self: start;
+    width: 30px;
+    font-size: 1em;
+    margin-left: 1em;
 }

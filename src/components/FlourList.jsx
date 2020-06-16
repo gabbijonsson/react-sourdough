@@ -24,8 +24,8 @@ function FlourList() {
     flourList.forEach((flour) => {
       floursToDisplay.push(
         <li key={flour.name + flourList.indexOf(flour)}>
-          <h2>{flour.name}</h2>
-          <button onClick={() => deleteFlour(flour)}>x</button>
+          <h3>{flour.name}</h3>
+          <button className="newbread__one-ingredient-row__deletebtn" onClick={() => deleteFlour(flour)}>X</button>
         </li>
       );
     });
@@ -45,12 +45,7 @@ function FlourList() {
       <Menu />
       <div className="flourlist__wrapper">
         <h1>Edit saved flours</h1>
-        {/* <div>
-            <label for="flourname">Name of flour: </label>
-            <input id="flourname" type="text" placeholder="Enter name..." />
-            <button className="addflour-btn">Add</button>
-        </div> */}
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form id="flourlist__form" onSubmit={handleSubmit(onSubmit)}>
             {errors.name && "Please enter a unique name."}
             <label htmlFor="flourname">Name of flour: </label>
             <input name="name" id="name" type="text" placeholder="Enter name..." ref={register({ required: true, validate: flourToValidate => !flourList.some((flour) => flour.name === flourToValidate) })} />
