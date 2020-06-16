@@ -2,7 +2,7 @@
   "name": "react-sourdoughtracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://gabbijonsson.github.io/react-sourdough",
+  "homepage": "http://gabbijonsson.github.io/react-sourdough/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
