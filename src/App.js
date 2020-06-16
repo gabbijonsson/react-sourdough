@@ -15,12 +15,12 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact={true} path="/" component={LandingPage} />
           <Route path="/new" component={NewBread} />
           <Route path="/started" component={OngoingPage} />
           <Route path="/submit" component={SubmitRecipe} />
           <Route path="/recipebank" component={RecipeBank} />
           <Route path="/flours" component={FlourList} />
+          <Route exact={true} path="/" component={LandingPage} />
         </Switch>
         <CopyrightText />
       </Router>
